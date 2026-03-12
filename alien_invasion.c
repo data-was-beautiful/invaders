@@ -845,7 +845,7 @@ static void render_hud(void)
 
     /* Score */
     char buf[32]; snprintf(buf,sizeof(buf),"SCORE:%06d", g_score);
-    draw_str(8, 7, buf, 2, 255,220,0,255);
+    draw_str(8, 7, buf, 2, 255,220,0);
 
     /* Life icons */
     int lx = SCREEN_W - 12;
@@ -857,7 +857,7 @@ static void render_hud(void)
     /* Pulse indicator */
     if (g_has_pulse) {
         int vis = (g_pulse_hud > 0) ? ((SDL_GetTicks()/200)%2) : 1;
-        if (vis) draw_cstr(7, "* PULSE READY *", 1, 80,200,255);
+        if (vis) draw_cstr(7, "* PULSE READY *", 1, 80,200,255); 
     }
 }
 
